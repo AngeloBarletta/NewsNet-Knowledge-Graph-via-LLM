@@ -10,7 +10,7 @@ from vertexai.preview.generative_models import (
     HarmCategory, 
     HarmBlockThreshold )
 
-genai.configure(api_key="AIzaSyDCeW7S8-o7mGbf03r_PpRoIvNosn94yW8")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 #Leggiamo il file delle relazioni filtrate dallo script post_processing_relations.py
 relations_csv_file = 'final_unique_relations.csv'
