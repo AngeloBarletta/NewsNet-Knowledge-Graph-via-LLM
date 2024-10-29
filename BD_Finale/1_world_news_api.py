@@ -4,6 +4,7 @@ import worldnewsapi
 import json
 from worldnewsapi.rest import ApiException
 import re
+import os
 
 #Funzione utile a suddividere le notizie recuperate in chunk (con sovrapposizione) a causa dei limiti del modello
 def split_text_into_chunks(text, max_length):
@@ -34,7 +35,7 @@ with open("offset_news.txt", "r") as file:
     offset_news = int(file.readline())
 
 all_results = []
-newsapi_configuration = worldnewsapi.Configuration(api_key={'apiKey': "89ad4009733446ab8220c9c67eb7d208"})
+newsapi_configuration = worldnewsapi.Configuration(api_key={'apiKey': os.getenv("NEWS_API_KEY")})
 max_length = 5000
 key_word = 'Elezioni europee'
 number_news = 100
