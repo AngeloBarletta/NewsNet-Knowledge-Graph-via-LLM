@@ -5,8 +5,9 @@ import csv
 from collections import defaultdict
 import os
 import google.generativeai as genai
+import os
 
-genai.configure(api_key="AIzaSyDCeW7S8-o7mGbf03r_PpRoIvNosn94yW8")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 #Lista che conterrà tutte le notizie e verrà passata al modello come prompt
 messages_prompt = []
