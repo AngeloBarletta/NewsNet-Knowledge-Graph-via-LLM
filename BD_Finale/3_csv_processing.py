@@ -16,9 +16,10 @@ from vertexai.preview.generative_models import (
     HarmCategory, 
     HarmBlockThreshold )
 from google.cloud.aiplatform_v1beta1.types.content import SafetySetting
+import os
 #from gemini import SafetySettings
 
-genai.configure(api_key="AIzaSyDJRoK47eh89MVGCZ0SCyV0-mxWR-NNraA")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 #Funzione utile a verificare se il nome di un'entità di tipo Person è contenuto all'interno di un'altra entità, in caso positivo viene mappato al nome completo.
