@@ -5,6 +5,7 @@ from neo4j import GraphDatabase
 from streamlit_agraph import agraph, Node, Edge, Config
 from streamlit_js_eval import streamlit_js_eval
 import google.generativeai as genai
+import os
 
 #Configurazione della pagina
 st.set_page_config(
@@ -17,7 +18,7 @@ st.set_page_config(
 #Valore della larghezza della pagina per determinare la larghezza del grafo risultato della query
 page_width = streamlit_js_eval(js_expressions='window.innerWidth', key='WIDTH',  want_output = True,)
 
-genai.configure(api_key="AIzaSyDJRoK47eh89MVGCZ0SCyV0-mxWR-NNraA")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 #Filtri per modificare i parametri del modello LLM
 st.sidebar.write("Model Parameter")
