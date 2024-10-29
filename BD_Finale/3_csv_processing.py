@@ -16,7 +16,6 @@ from vertexai.preview.generative_models import (
     HarmCategory, 
     HarmBlockThreshold )
 from google.cloud.aiplatform_v1beta1.types.content import SafetySetting
-import os
 #from gemini import SafetySettings
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
